@@ -131,7 +131,7 @@ neutralize_riskiest_features(training_data, training_data, features, model_name,
 spinner.succeed()
 gc.collect()
 
-print('Exporting meta-model training data to csv...')
+print('Exporting model training data to csv...')
 training_data["prediction"] = training_data[f"preds_{model_name}_neutral_riskiest_{num_feature_neutralization}"] \
     .rank(pct=True)
 training_data["prediction"].to_csv(f"predictions/NN/meta_train_{model_name}.csv")
